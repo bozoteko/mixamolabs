@@ -24,18 +24,23 @@
             color: #b04eff; /* Purple color */
         }
         #content {
-            display: flex;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 40px; /* Adjust the left and right padding as needed */
+    }
         #sidebar {
             width: 200px;
             background-color: #272727be;
             padding: 20px;
             box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
-            border-right: 1px solid #4d4d4d; /* Add border to sidebar */
+            border-right: 0px solid #4d4d4d; /* Add border to sidebar */
+            margin-right: 3px; /* Add margin to the right side of the sidebar */
+                    border: 1px solid #b04eff;
+                    padding: 10px;
+
         }
+
         #main-content {
             flex: 1;
             background-color: #1a1a1a;
@@ -110,13 +115,14 @@
     margin-right: 10px;
 }
         
-        #videos {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            align-items: center;
-        }
+#videos {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin-left: 20px; /* Add margin to the left side of the videos container */
+}
         
         .video-card {
         width: 100%;
@@ -124,7 +130,7 @@
         border: 1px solid #b04eff;
         padding: 10px;
         background-color: #1a1a1a;
-        animation: glowAnimation 2s infinite alternate; /* Apply the animation */
+        animation: glowAnimation 1s infinite alternate; /* Apply the animation */
     }
 
         #header h1 {
