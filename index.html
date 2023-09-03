@@ -36,8 +36,9 @@
             box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
             border-right: 0px solid #4d4d4d; /* Add border to sidebar */
             margin-right: 3px; /* Add margin to the right side of the sidebar */
-                    border: 1px solid #b04eff;
-                    padding: 10px;
+            border: 1px solid #b04eff;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(176, 78, 255, 0.5);
 
         }
 
@@ -77,7 +78,7 @@
 }
 @keyframes glowAnimation {
     from {
-        box-shadow: 0 0 20px rgba(176, 78, 255, 0.5); /* Increase the radius here */
+        box-shadow: 0 0 24px rgba(176, 78, 255, 0.5); /* Increase the radius here */
     }
     to {
         box-shadow: 0 0 25px rgba(176, 78, 255, 0.8); /* Increase the radius here */
@@ -131,6 +132,7 @@
         padding: 10px;
         background-color: #1a1a1a;
         animation: glowAnimation 1s infinite alternate; /* Apply the animation */
+        
     }
 
         #header h1 {
@@ -180,24 +182,25 @@
 }
 
         /* Add media query for mobile devices */
-        @media (max-width: 768px) {
+        @media only screen and (max-width: 767px) {
             #content {
                 flex-direction: column;
                 align-items: center;
             }
             #sidebar {
                 width: 100%;
-                max-width: 100%;
             }
-            .video-card iframe {
-                max-width: 100%;
-                height: auto;
+            #info {
+                flex-direction: column;
+                align-items: center;
             }
-            .info-box img {
-                max-width: 40%;
-                height: auto;
+            .video-card {
+                width: 100%;
+                margin-right: 20px;
+                margin-top: 15px;
             }
         }
+        
     </style>
 </head>
 <body>
