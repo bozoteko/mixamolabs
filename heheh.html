@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mixamo Basketball Badges</title>
+    <link rel="icon" href="007698270ea50776a2c5384e2a683b77.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000; /* Discord dark theme background */
+            color: #fff;
+        }
+        #header {
+            background-color: #1a1a1a; /* Discord dark theme header color */
+            padding: 10px;
+            text-align: center;
+        }
+        #header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #b04eff; /* Discord brand color */
+        }
+        #content {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        #sidebar {
+            width: 200px;
+            background-color: #272727be; /* Discord dark theme sidebar color */
+            padding: 20px;
+            box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+        }
+        #buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        #buttons button {
+            padding: 10px 20px;
+            background-color: #272727be;
+            color: #b04eff; /* Purple color */
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s, box-shadow 0.2s;
+            text-align: center;
+            border-radius: 15px; /* Adjust the border-radius value for rounder corners */
+            position: relative;
+            overflow: hidden; /* Hide overflow from pseudo-elements */
+            z-index: 1;
+        }
+        #buttons button:hover {
+            background-color: #1a1a1a; /* Slightly darker shade of brand color */
+        }
+        #buttons button.active {
+            background-color: #4d4d4d; /* Highlight color */
+            animation: glowAnimation 2s infinite alternate; /* Apply the glow animation */
+        }
+        #discord-button {
+            padding: 20px 20px;
+            background-color: #4d4d4d;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        #discord-button:hover {
+            background-color: #4d4d4d;
+        }
+        @keyframes glowAnimation {
+            from {
+                box-shadow: 0 0 20px rgba(176, 78, 255, 0.5); /* Increase the radius here */
+            }
+            to {
+                box-shadow: 0 0 25px rgba(176, 78, 255, 0.8); /* Increase the radius here */
+            }
+        }
+        #info {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap; /* Wrap to new row if needed */
+            gap: 20px; /* Horizontal gap between items */
+        }
+        .info-card {
+            width: calc(50% - 20px); /* Two items in a row, minus gaps */
+            max-width: 200px;
+            border: 1px solid #b04eff; /* Discord brand color */
+            padding: 10px;
+            background-color: #1a1a1a; /* Discord dark theme card background */
+            box-shadow: 0 0 10px rgba(176, 78, 255, 0.5); /* Initial glow color and size */
+            animation: glowAnimation 2s infinite alternate; /* Apply the glow animation */
+            margin-left: 20px;
+        }
+        .info-content {
+            text-align: center;
+            gap: 5px;
+        }
+        .info-content p {
+            font-size: 14px;
+            margin: 0;
+        }
+        .info-image {
+            max-width: 100px;
+            max-height: 100px;
+            border-radius: 4px;
+        }
+
+        @media only screen and (max-width: 767px) {
+            #content {
+                flex-direction: column;
+                align-items: center;
+            }
+            #sidebar {
+                width: 100%;
+            }
+            #info {
+                flex-direction: column;
+                align-items: center;
+            }
+            .info-card {
+                width: 100%;
+                margin-right: 30px;
+            }
+        }
+        @keyframes pageFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Mixamo Basketball Lab</h1>
+    </div>
+    <div id="content">
+        <div id="sidebar">
+            <div id="buttons">
+                <button onclick="window.location.href='index.html'">Home</button> 
+                <button onclick="window.location.href='updates.html'">Mixamo Updates</button>
+                <button onclick="window.location.href='takeovers.html'">Takeovers</button>
+                <button class="active" onclick="window.location.href='badges.html'">Badges</button>
+                <button onclick="window.location.href='mixamostaff.html'">Mixamo Staff</button>
+                <button id="discord-button" onclick="window.location.href='https://discord.gg/kbSdKqHgrp'">Mixamo Lab Discord</button>
+                <button id="discord-button" onclick="window.location.href='https://discord.gg/mixamobasketball'">Official Mixamo Discord</button>
+            </div>
+        </div>
+        <div id="info">
+            <div class="info-card">
+                <div class="info-content">
+                    <img class="info-image" src="badge.png" alt="Image 1">
+                    <p style="font-size: x-large">THIS WILL BE UPDATED ONCE BADGES ARE IN THE GAME AND FINISHED.</p>
+                    <p>THIS WILL BE UPDATED ONCE BADGES ARE IN THE GAME AND FINISHED.
+                    </p>
+                </div>
+            </div>
+    <script>
+        // JavaScript to trigger animation when navigating to a new page
+        function navigateToPage(pageId) {
+            const pages = document.querySelectorAll('.animated-page');
+            pages.forEach(page => {
+                if (page.id === pageId) {
+                    page.style.opacity = '0';
+                } else {
+                    page.style.opacity = '1';
+                }
+            });
+
+            // Add your logic to actually navigate to the new page
+            // For example: window.location.href = 'new-page.html';
+        }
+    </script>
+</body>
+</html>
