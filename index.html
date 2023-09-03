@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mixamo Basketball Lab</title>
+    <link rel="icon" href="007698270ea50776a2c5384e2a683b77.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000; /* Change the background color here */
+            color: #fff;
+        }
+        #header {
+            background-color: #1a1a1a;
+            padding: 10px;
+            text-align: center;
+        }
+        #header h1 {
+            margin: 0;
+            font-size: 28px;
+            color: #b04eff; /* Purple color */
+        }
+        #content {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        #sidebar {
+            width: 200px;
+            background-color: #272727be;
+            padding: 20px;
+            box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+            border-right: 1px solid #4d4d4d; /* Add border to sidebar */
+        }
+        #main-content {
+            flex: 1;
+            background-color: #1a1a1a;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        #buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }   
+        #buttons button {
+        padding: 10px 20px;
+        background-color: #272727be;
+        color: #b04eff; /* Purple color */
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.2s, box-shadow 0.2s;
+        text-align: center;
+        border-radius: 15px; /* Adjust the border-radius value for rounder corners */
+    position: relative;
+    overflow: hidden; /* Hide overflow from pseudo-elements */
+    z-index: 1;
+    }
+
+        #buttons button:hover {
+            background-color: #4d4d4d;
+        }
+        #buttons button.active {
+    background-color: #4d4d4d;
+    box-shadow: 0 0 20px rgba(176, 78, 255, 0.7); /* Adjust the glow effect */
+}
+@keyframes glowAnimation {
+    from {
+        box-shadow: 0 0 20px rgba(176, 78, 255, 0.5); /* Increase the radius here */
+    }
+    to {
+        box-shadow: 0 0 25px rgba(176, 78, 255, 0.8); /* Increase the radius here */
+    }
+}
+        
+        #discord-button {
+            padding: 20px 20px;
+            background-color: #1a1a1a;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        #discord-button:hover {
+            background-color: #1a1a1a;
+        }
+        .contact {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.contact-text {
+    margin-right: 10px;
+    font-size: 18px; 
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+}
+
+.social-icons a {
+    margin-right: 10px;
+}
+        
+        #videos {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .video-card {
+        width: 100%;
+        max-width: 1000px;
+        border: 1px solid #b04eff;
+        padding: 10px;
+        background-color: #1a1a1a;
+        animation: glowAnimation 2s infinite alternate; /* Apply the animation */
+    }
+
+        #header h1 {
+            margin: 0;
+            font-size: 24px;
+            animation: alternatingColors 4s infinite; /* Apply the animation */
+        }
+        
+        iframe {
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+        }
+        
+        .info-box {
+            text-align: center;
+        }
+        
+        .info-box img {
+            max-width: 20%;
+            height: auto;
+        }
+        
+        .FeatuedVids {
+            text-align: center;
+        }
+        
+        .FeatuedVids iframe {
+            width: 100%;
+            max-width: 400px;
+            height: 225px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px; /* Increase the margin to push the footer lower */
+            color: #ffffff;
+            font-size: 14px; /* Adjust the font size */
+        }
+        @keyframes movingBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+        /* Add media query for mobile devices */
+        @media (max-width: 768px) {
+            #content {
+                flex-direction: column;
+                align-items: center;
+            }
+            #sidebar {
+                width: 100%;
+                max-width: 100%;
+            }
+            .video-card iframe {
+                max-width: 100%;
+                height: auto;
+            }
+            .info-box img {
+                max-width: 40%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Mixamo Basketball Lab</h1>
+    </div>
+    <div id="content">
+        <div id="sidebar">
+            <div id="buttons">
+                <button class="active" onclick="window.location.href=''">Home</button>
+                <button onclick="window.location.href='updates.html'">Mixamo Updates</button>
+                <button onclick="window.location.href='takeovers.html'">Takeovers</button>
+                <button onclick="window.location.href='badges.html'">Badges</button>
+                <button onclick="window.location.href='mixamostaff.html'">Mixamo Staff</button>
+                <button id="discord-button" onclick="window.location.href='https://discord.gg/kbSdKqHgrp'">Mixamo Lab Discord</button>
+                <button id="discord-button" onclick="window.location.href='https://discord.gg/mixamobasketball'">Official Mixamo Discord</button>
+            </div>
+            <div class="contact">
+                <div class="contact-text">
+                    <p>Contact:</p>
+                </div>
+                <div class="social-icons">
+                    <a href="https://discord.com/users/933241260972589076" target="_blank"><img src="discord.png" alt="Discord" width="50" height="50"></a>
+                    <a href="https://www.tiktok.com/@bozoteko" target="_blank"><img src="tiktok.png" alt="Tiktok" width="32" height="32"></a>
+                </div>
+            </div>
+        </div>
+        <div id="videos" class="video-card">
+            <!-- Replace with actual YouTube video embeds -->
+            <div class="info-box">
+                <img src="labslogo.png" alt="Image 3" width="300" height="800">
+                <p><b>This Website Is Work In Progress Alot Will Change Over Time, This Website Will Provide Mixamo Updates, Builds, Takeovers, ETC, Make Sure To Join The Official Mixamo Discord and the Lab Discord.</b></p>
+                <p>&nbsp;</p>
+                <p><b>Anything about buids and jumpshots will be posted in the lab discord, if your on mobile you can join from the buttons above, if your on PC you can join from the sidebar to the left.</b></p>
+                            </div>
+            <div class="FeatuedVids">
+                <p style="font-size: medium">Featured Mixamo Youtube Videos</p>
+                <iframe width="300" height="150" src="https://www.youtube.com/embed/iBZBtrDG6k0" frameborder="0" allowfullscreen></iframe>
+                <iframe width="300" height="150" src="https://www.youtube.com/embed/BfUKCRd1mQY" frameborder="0" allowfullscreen></iframe>
+                <iframe width="300" height="150" src="https://www.youtube.com/embed/AH50asRH38U" frameborder="0" allowfullscreen></iframe>
+                <iframe width="300" height="150" src="https://www.youtube.com/embed/ts4F7Im350M" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; Website Made By Teko</p>
+    </div>
+</body>
+</html>
