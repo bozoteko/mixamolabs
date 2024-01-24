@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mixamo Basketball Badges</title>
+    <link rel="icon" href="007698270ea50776a2c5384e2a683b77.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000; /* Discord dark theme background */
+            color: #fff;
+        }
+        #header {
+            background-color: #1a1a1a; /* Discord dark theme header color */
+            padding: 10px;
+            text-align: center;
+        }
+        #header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #b04eff; /* Discord brand color */
+        }
+        #content {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        #sidebar {
+            width: 200px;
+            background-color: #272727be;
+            padding: 20px;
+            box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+            border-right: 0px solid #4d4d4d; /* Add border to sidebar */
+            margin-right: 3px; /* Add margin to the right side of the sidebar */
+            border: 1px solid #b04eff;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(176, 78, 255, 0.5);
+        }
+        #buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        #buttons button {
+            padding: 10px 20px;
+            background-color: #272727be;
+            color: #b04eff; /* Purple color */
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s, box-shadow 0.2s;
+            text-align: center;
+            border-radius: 15px; /* Adjust the border-radius value for rounder corners */
+            position: relative;
+            overflow: hidden; /* Hide overflow from pseudo-elements */
+            z-index: 1;
+        }
+        #buttons button:hover {
+            background-color: #1a1a1a; /* Slightly darker shade of brand color */
+        }
+        #buttons button.active {
+            background-color: #4d4d4d; /* Highlight color */
+            animation: glowAnimation 2s infinite alternate; /* Apply the glow animation */
+        }
+        #discord-button {
+            padding: 20px 20px;
+            background-color: #4d4d4d;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        #discord-button:hover {
+            background-color: #4d4d4d;
+        }
+        @keyframes glowAnimation {
+            from {
+                box-shadow: 0 0 15px rgba(176, 78, 255, 0.5); /* Increase the radius here */
+            }
+            to {
+                box-shadow: 0 0 18px rgba(176, 78, 255, 0.8); /* Increase the radius here */
+            }
+        }
+        #info {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap; /* Wrap to new row if needed */
+            gap: 20px; /* Horizontal gap between items */
+        }
+        .badge-set {
+        flex-basis: 33.33%; /* Three sets in a row */
+        margin-bottom: 0; /* Remove the margin-bottom to eliminate the gap */
+    }
+
+        .badge-set-text {
+            background-color: #1a1a1a; /* Background color for the text box */
+            padding: 10px;
+            border-radius: 10px; /* Adjust the border-radius for rounded corners */
+            box-shadow: 0 0 10px rgba(176, 78, 255, 0.5); /* Box shadow for the text box */
+            margin-bottom: 10px; /* Add space between text box and badges */
+        }
+        .badge-wrapper {
+            display: flex;
+            justify-content: space-between; /* Spread badges evenly */
+        }
+        .info-card {
+            width: calc(33.33% - 20px); /* Three items in a row, minus gaps */
+            max-width: 200px;
+            border: 1px solid #b04eff; /* Discord brand color */
+            padding: 10px;
+            background-color: #1a1a1a; /* Discord dark theme card background */
+            box-shadow: 0 0 10px rgba(176, 78, 255, 0.5); /* Initial glow color and size */
+            padding-left: 30px;
+            padding-right: 30px;
+
+        }
+        .info-content {
+            text-align: center;
+            gap: 5px;
+        }
+        .info-content p {
+            font-size: 14px;
+            margin: 0;
+            color: #fff; /* Text color */
+        }
+        .info-image {
+            max-width: 100px;
+            max-height: 100px;
+            border-radius: 4px;
+        }
+
+        /* Add more badge sets as needed */
+        
+        @media only screen and (max-width: 767px) {
+            #content {
+                flex-direction: column;
+                align-items: center;
+            }
+            #sidebar {
+                width: 95%;
+                margin-right: 20px;
+            }
+            .badge-set {
+                flex-basis: 50%; /* Full width on smaller screens */
+            }
+            .badge-set-text {
+                margin-top: 15px; /* Add space between text box and badges */
+                margin-left: 83px;
+            }
+            .badge-wrapper {
+                flex-direction: column; /* Display badges in a single column */
+            }
+            .info-card {
+                width: 100%; /* Make the badges take the full width on mobile */
+                margin-right: 0;
+                margin-bottom: 10px; /* Add some space between badges */
+                margin-left: 43px;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Mixamo Basketball Lab</h1>
+    </div>
+    <div id="content">
+        <div id="sidebar">
+            <div id="buttons">
+                <button onclick="window.location.href='index.html'">Home</button> 
+                <button onclick="window.location.href='updates.html'">Mixamo Updates</button>
+                <button onclick="window.location.href='takeovers.html'">Takeovers</button>
+                <button class="active" onclick="window.location.href='badges.html'">Badges</button>
+                <button onclick="window.location.href='mixamostaff.html'">Mixamo Staff</button>
+                <button id="discord-button" onclick="window.location.href='https://discord.gg/kbSdKqHgrp'">Mixamo Lab Discord</button>
+                <button id="discord-button" onclick="window.location.href='https://discord.gg/mixamobasketball'">Official Mixamo Discord</button>
+            </div>
+        </div>
+        <div id="info">
+            <!-- FINISHING BADGES -->
+            <div class="badge-set">
+                <div class="badge-set-text" style="text-align: center;"><b>FINISHING&nbsp;BADGES</b></div>
+                <div class="badge-wrapper">
+                    <div class="info-card">
+                        <div class="info-content">
+                            <img class="info-image" src="mixamolabsfinishing.png" alt="Image 1">
+                            <p style="font-size: large">Badge&nbsp;Name</p>
+                            <p>Badge Description.</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-content">
+                            <img class="info-image" src="mixamolabsfinishing.png" alt="Image 2">
+                            <p style="font-size: large">Badge&nbsp;Name</p>
+                            <p>Badge Description.</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-content">
+                            <img class="info-image" src="mixamolabsfinishing.png" alt="Image 3">
+                            <p style="font-size: large">Badge&nbsp;Name</p>
+                            <p>Badge Description.</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-content">
+                            <img class="info-image" src="mixamolabsfinishing.png" alt="Image 3">
+                            <p style="font-size: large">Badge&nbsp;Name</p>
+                            <p>Badge Description.</p>
+                        </div>
+                    </div>
+                        <div class="info-card">
+                        <div class="info-content">
+                            <img class="info-image" src="mixamolabsfinishing.png" alt="Image 3">
+                            <p style="font-size: large">Badge&nbsp;Name</p>
+                            <p>Badge Description.</p>
+                        </div>
+                    </div>
+                </div>
+            <div class="badge-set">
+                <div class="badge-wrapper">
+                    <div class="info-card">
+                        <div class="info-content">
+                            <img class="info-image" src="mixamolabsfinishing.png" alt="Image 4">
+                            <p style="font-size: large">Badge&nbsp;Name</p>
+                            <p>Badge Description.</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-content">
+                            <img class="info-image" src="mixamolabsfinishing.png" alt="Image 5">
+                            <p style="font-size: large">Badge&nbsp;Name</p>
+                            <p>Badge Description.</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-content">
+                            <img class="info-image" src="mixamolabsfinishing.png" alt="Image 6">
+                            <p style="font-size: large">Badge&nbsp;Name</p>
+                            <p>Badge Description.</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-content">
+                            <img class="info-image" src="mixamolabsfinishing.png" alt="Image 6">
+                            <p style="font-size: large">Badge&nbsp;Name</p>
+                            <p>Badge Description.</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-content">
+                            <img class="info-image" src="mixamolabsfinishing.png" alt="Image 6">
+                            <p style="font-size: x-large">Badge Name</p>
+                            <p>Badge Description.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="badge-set">
+                <div class="badge-set-text" style="text-align: center;"><b>SHOOTING&nbsp;BADGES</b></div>
+                <div class="badge-wrapper">
+                    <div class="info-card">
+                        <div class="info-content">
+                            <img class="info-image" src="mixamoshootingbadges.png" alt="Image 1">
+                            <p style="font-size: large">Badge&nbsp;Name</p>
+                            <p>Badge Description.</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-content">
+                            <img class="info-image" src="mixamoshootingbadges.png" alt="Image 2">
+                            <p style="font-size: large">Badge&nbsp;Name</p>
+                            <p>Badge Description.</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-content">
+                            <img class="info-image" src="mixamoshootingbadges.png" alt="Image 3">
+                            <p style="font-size: large">Badge&nbsp;Name</p>
+                            <p>Badge Description.</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-content">
+                            <img class="info-image" src="mixamoshootingbadges.png" alt="Image 3">
+                            <p style="font-size: large">Badge&nbsp;Name</p>
+                            <p>Badge Description.</p>
+                        </div>
+                    </div>
+                                        <div class="info-card">
+                        <div class="info-content">
+                            <img class="info-image" src="mixamoshootingbadges.png" alt="Image 3">
+                            <p style="font-size: large">Badge&nbsp;Name</p>
+                            <p>Badge Description.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more badge sets as needed -->
+        </div>
+    </div>
+    <script>
+        // JavaScript to trigger animation when navigating to a new page
+        function navigateToPage(pageId) {
+            const pages = document.querySelectorAll('.animated-page');
+            pages.forEach(page => {
+                if (page.id === pageId) {
+                    page.style.opacity = '0';
+                } else {
+                    page.style.opacity = '1';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
