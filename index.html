@@ -24,24 +24,18 @@
             color: #b04eff; /* Purple color */
         }
         #content {
-    display: flex;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px 40px; /* Adjust the left and right padding as needed */
-    }
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
         #sidebar {
             width: 200px;
             background-color: #272727be;
             padding: 20px;
             box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
-            border-right: 0px solid #4d4d4d; /* Add border to sidebar */
-            margin-right: 3px; /* Add margin to the right side of the sidebar */
-            border: 1px solid #b04eff;
-            padding: 10px;
-            box-shadow: 0 0 10px rgba(176, 78, 255, 0.5);
-
+            border-right: 1px solid #4d4d4d; /* Add border to sidebar */
         }
-
         #main-content {
             flex: 1;
             background-color: #1a1a1a;
@@ -78,7 +72,7 @@
 }
 @keyframes glowAnimation {
     from {
-        box-shadow: 0 0 24px rgba(176, 78, 255, 0.5); /* Increase the radius here */
+        box-shadow: 0 0 20px rgba(176, 78, 255, 0.5); /* Increase the radius here */
     }
     to {
         box-shadow: 0 0 25px rgba(176, 78, 255, 0.8); /* Increase the radius here */
@@ -116,14 +110,13 @@
     margin-right: 10px;
 }
         
-#videos {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    margin-left: 20px; /* Add margin to the left side of the videos container */
-}
+        #videos {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
         
         .video-card {
         width: 100%;
@@ -131,8 +124,7 @@
         border: 1px solid #b04eff;
         padding: 10px;
         background-color: #1a1a1a;
-        animation: glowAnimation 1s infinite alternate; /* Apply the animation */
-        
+        animation: glowAnimation 2s infinite alternate; /* Apply the animation */
     }
 
         #header h1 {
@@ -182,25 +174,24 @@
 }
 
         /* Add media query for mobile devices */
-        @media only screen and (max-width: 767px) {
+        @media (max-width: 768px) {
             #content {
                 flex-direction: column;
                 align-items: center;
             }
             #sidebar {
                 width: 100%;
+                max-width: 100%;
             }
-            #info {
-                flex-direction: column;
-                align-items: center;
+            .video-card iframe {
+                max-width: 100%;
+                height: auto;
             }
-            .video-card {
-                width: 100%;
-                margin-right: 20px;
-                margin-top: 15px;
+            .info-box img {
+                max-width: 40%;
+                height: auto;
             }
         }
-        
     </style>
 </head>
 <body>
@@ -218,16 +209,27 @@
                 <button id="discord-button" onclick="window.location.href='https://discord.gg/kbSdKqHgrp'">Mixamo Lab Discord</button>
                 <button id="discord-button" onclick="window.location.href='https://discord.gg/mixamobasketball'">Official Mixamo Discord</button>
             </div>
+            <div class="contact">
+                <div class="contact-text">
+                    <p>Contact:</p>
+                </div>
+                <div class="social-icons">
+                </div>
+            </div>
+        </div>
         <div id="videos" class="video-card">
             <!-- Replace with actual YouTube video embeds -->
             <div class="info-box">
                 <img src="labslogo.png" alt="Image 3" width="300" height="800">
                 <p><b>This Website Is Work In Progress Alot Will Change Over Time, This Website Will Provide Mixamo Updates, Builds, Takeovers, ETC, Make Sure To Join The Official Mixamo Discord and the Lab Discord.</b></p>
-                <p>&nbsp;</p>
+                <p>---------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
                 <p><b>Anything about buids and jumpshots will be posted in the lab discord, if your on mobile you can join from the buttons above, if your on PC you can join from the sidebar to the left.</b></p>
                             </div>
             <div class="FeatuedVids">
-                <p style="font-size: medium">Featured Mixamo Youtube Videos</p>
+                <p>Any suggestions on what to add to the website either dm me on discord or ping me in the labs server.</p>
+            </div>
+            <div class="FeatuedVids">
+                <p>Featured Mixamo Youtube Videos</p>
                 <iframe width="300" height="150" src="https://www.youtube.com/embed/iBZBtrDG6k0" frameborder="0" allowfullscreen></iframe>
                 <iframe width="300" height="150" src="https://www.youtube.com/embed/BfUKCRd1mQY" frameborder="0" allowfullscreen></iframe>
                 <iframe width="300" height="150" src="https://www.youtube.com/embed/AH50asRH38U" frameborder="0" allowfullscreen></iframe>
